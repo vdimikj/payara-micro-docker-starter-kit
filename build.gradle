@@ -2,6 +2,7 @@ plugins {
     id "war"
     id "idea"
     id "de.undercouch.download" version "3.2.0"
+    id "org.sonarqube" version "2.5"
 }
 
 group "$groupName"
@@ -10,6 +11,46 @@ repositories {
     mavenCentral()
 }
 
+
+///
+/**
+ * Sonarqube server setup
+ */
+sonarqube {
+    properties {
+        property "sonar.host.url", "http://localhost:9000"
+        //TODO change name of microservice
+        property "sonar.projectName", "Microservice - vdimikj/Fork Starter Kit"
+        property "sonar.projectKey", "microservice.starter-kit"
+        property "sonar.analysis.mode", 'preview'
+        property "sonar.jacoco.reportPaths", ["${project.buildDir}/jacoco/test.exec", "${project.buildDir}/jacoco/itest.exec"]
+        property "sonar.github.oauth", "e9579da84b760aa6b3589789420e2ce64267f1b5"
+        property "sonar.github.repository", "vdimikj/payara-micro-docker-starter-kit"
+        property "sonar.login", "admin"
+        property "sonar.github.pullRequest", "1"
+        property "sonar.github.login", "vdimikj"
+        property "sonar.password", "admin"
+    }
+}
+
+//-Dsonar.sourceEncoding=UTF-8
+//-Dsonar.analysis.mode=preview
+//-Dsonar.github.repository=bhargavamin/devops
+//-Dsonar.verbose=true
+//-Dsonar.github.pullRequest=${ghprbPullId}
+//-Dsonar.github.login=<place github user here>
+//-Dsonar.github.oauth=<place here token generated from github account>
+//
+
+
+task sonar() {
+    doFirst {
+            println("starting sonarqube scanner")
+            tasks.sonarqube.execute()
+    }
+}
+
+///
 /**
  * Set sources for integration tests
  */

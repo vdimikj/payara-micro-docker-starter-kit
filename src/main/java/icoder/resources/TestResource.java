@@ -72,4 +72,71 @@ public class TestResource {
     return false;
   }
 
+    public Boolean checkIs1NameDuplicateInParent(Folder folder) {
+        List<Folder> mediaFoldersByCountry = new ArrayList<>();
+        for (Folder mediaFolderByCountry : mediaFoldersByCountry) {
+            if (mediaFolderByCountry.getName().equalsIgnoreCase(folder.getName())) {
+                if (mediaFolderByCountry.getName().equals(folder.getName()))
+                    continue;
+                else {
+                    if (mediaFolderByCountry.getFullName() == null && folder.getFullName() == null) {
+                        return true;
+                    } else {
+                        if (mediaFolderByCountry.getFullName() == null || folder.getFullName() == null) {
+                            continue;
+                        }
+                        if (mediaFolderByCountry.getFullName().equals(folder.getFullName())) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    public Boolean checkIsNameDuplicateInPare3nt(Folder folder) {
+        List<Folder> mediaFoldersByCountry = new ArrayList<>();
+        for (Folder mediaFolderByCountry : mediaFoldersByCountry) {
+            if (mediaFolderByCountry.getName().equalsIgnoreCase(folder.getName())) {
+                if (mediaFolderByCountry.getName().equals(folder.getName()))
+                    continue;
+                else {
+                    if (mediaFolderByCountry.getFullName() == null && folder.getFullName() == null) {
+                        return true;
+                    } else {
+                        if (mediaFolderByCountry.getFullName() == null || folder.getFullName() == null) {
+                            continue;
+                        }
+                        if (mediaFolderByCountry.getFullName().equals(folder.getFullName())) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    public Boolean checkIsNameDuplicateInParent2(Folder folder) {
+        List<Folder> mediaFoldersByCountry = new ArrayList<>();
+        for (Folder mediaFolderByCountry : mediaFoldersByCountry) {
+            if (mediaFolderByCountry.getName().equalsIgnoreCase(folder.getName())) {
+                if (mediaFolderByCountry.getName().equals(folder.getName()))
+                    continue;
+                else {
+                    if (mediaFolderByCountry.getFullName() == null && folder.getFullName() == null) {
+                        return true;
+                    } else {
+                        if (mediaFolderByCountry.getFullName() == null || folder.getFullName() == null) {
+                            continue;
+                        }
+                        if (mediaFolderByCountry.getFullName().equals(folder.getFullName())) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
 }

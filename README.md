@@ -1,3 +1,20 @@
+## Integration with SonarQube for PR analysis 
+run sonar command with 
+gradle sonar -Dsonar.github.pullRequest=3 --stacktrace
+
+which can then be later setup into continuous integration server
+
+have sonarQube server under localhost:9000 
+version used for this POC is sonarqube 6.3.1 with 
+github plugin - sonar-github-plugin-1.4.2-SNAPSHOT.jar where issue with casting github id to int is fixed
+
+
+started with //bash sonar.sh console --stacktrace
+
+setup oauth personal token 
+
+ENJOY!
+
 # Java EE micro service starter kit with docker, payara micro, arquillian on AWS Cloud 
 * This is complete example how to setup java ee ready for micro service AWS Cloud deployment with AWS elastic beanstalk
 and AWS Code pipeline via AWS Code Build

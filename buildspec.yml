@@ -22,4 +22,5 @@ phases:
     - gradle dockerCompose
     - gradle clean test itest --stacktrace
     - gradle dockerComposeDown
+    - gradle sonar -Dsonar.github.pullRequest=prId
     - gradle clean build publishToECR -Penv=prod -x test --stacktrace
